@@ -1,1 +1,1 @@
-# designPatters
+# design patterns implementation
