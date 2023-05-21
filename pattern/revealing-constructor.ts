@@ -1,29 +1,28 @@
-const EventEmitter = require('events');
+import EventEmitter from 'node:events';
 
 class EventBulder extends EventEmitter {
-    constructor(executor: (func: (eventName: string | symbol, ...args: any[]) => boolean) => void) {
-        super();
-        const emit = this.emit.bind(this);
+  constructor(executor: (func: (eventName: string | symbol, ...args: unknown[]) => boolean) => void) {
+    super();
+    const emit = this.emit.bind(this);
 
-        executor(emit);
-    }
+    executor(emit);
+  }
 }
 
 let interval: NodeJS.Timer;
 
 const eventBuilder = new EventBulder((emit) => {
-    let count = 0;
+  let count = 0;
 
-    interval = setInterval(() => {
-        emit('tick', ++count);
-    }, 1000)
+  interval = setInterval(() => {
+    emit('tick', ++count);
+  }, 1000);
 });
 
-
 eventBuilder.on('tick', (count: number) => {
-    console.log('count:', count);
+  console.log('count:', count);
 
-    if (count === 10) {
-        clearInterval(interval);
-    }
-})
+  if (count === 10) {
+    clearInterval(interval);
+  }
+});
