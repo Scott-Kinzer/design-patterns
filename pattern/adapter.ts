@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 interface MediaPlayer {
   play(filename: string): void;
 }
