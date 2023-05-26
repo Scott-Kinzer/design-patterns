@@ -3,7 +3,6 @@ class ProductExample {
   public name: string | undefined;
   public price: number | undefined;
 
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   constructor() {}
 
   public getId(): number | undefined {
