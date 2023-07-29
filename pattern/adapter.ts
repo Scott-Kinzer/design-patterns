@@ -1,11 +1,12 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-empty-function */
 interface MediaPlayer {
   play(filename: string): void;
 }
 
 interface AdvancedMediaPlayer {
-  playVlc(filename: string): void;
   playMp4(filename: string): void;
+  playVlc(filename: string): void;
 }
 
 class VlcPlayer implements AdvancedMediaPlayer {
