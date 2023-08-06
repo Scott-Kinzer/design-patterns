@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint **/*.ts",
-    "format": "prettier --write **/*.ts"
+    "format": "prettier --write **/*.ts",
+    "prepare": "husky install"
   },
   "author": "",
   "license": "ISC",
@@ -18,7 +19,13 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.0",
     "prettier": "^2.8.8",
     "typescript": "^5.2.0-dev.20230521"
+  },
+  "dependencies": {
+    "@commitlint/cli": "^17.6.7",
+    "@commitlint/config-conventional": "^17.6.7",
+    "lint-staged": "^13.2.3"
   }
 }
